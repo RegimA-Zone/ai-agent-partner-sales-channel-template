@@ -232,6 +232,8 @@ curl --location 'https://$SHOP-DOMAIN.myshopify.com/admin/api/2025-04/storefront
 --data '{"storefront_access_token":{"title":"My Storefront Token"}}'
 ```
 
+**Note:** An Online access token cannot be used to generate a storefront access token. Pre claim, you should use a `client_credentials` granted token, if you are connecting an existing user or generating a new storefront token then you should perform an oauth redirect for an `offline access token`.
+
 ### Configuring Your Sales Channel
 
 A sales channel is a Shopify app type that lets merchants manage which products are available on a given storefront. Your Sales Channel App will be converted into a sales channel during onboarding -- this is an irreversible process handled by Shopify on your behalf. Once converted, the app gains a publication that controls product visibility: only products explicitly published to your sales channel will be queryable via your Storefront API token. This also enables explicit sales attribution -- merchants can see the exact revenue generated through your custom storefront, separately from other channels like the Online Store or POS. For more on building sales channels, see the [Shopify sales channel documentation](https://shopify.dev/docs/apps/build/sales-channels/start-building).
