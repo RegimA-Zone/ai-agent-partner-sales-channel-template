@@ -24,13 +24,13 @@ export class PartnerProjectLinks {
   async getProjectFrontendUrl() {
     return (
       (await this.getProjectUrlFromRedirectTheme()) ??
-      `https://project.example.com`
+      `https://storefront.skintwin.ai`
     );
   }
 
   /** A URL the merchant can use to reach the AI code agent to modify their storefront */
   async getProjectManagementUrl() {
-    return "https://example.app";
+    return "https://dashboard.skintwin.ai";
   }
 
   private async getProjectUrlFromRedirectTheme() {
